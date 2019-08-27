@@ -47,7 +47,7 @@
 Map.setCenter(24.94657, 40.93488, 15);
 
 // Indicate here iteration number and comments for naming the results
-var iteration = '03published';
+var iteration = 'it03published';
 
 // Import the high-resolution orthophotomosaic from the asset repository
 var orthomosaic = ee.Image('users/hao23/sherds/plot591'); // To use your own orthomosaic change the address to that of your asset
@@ -156,7 +156,7 @@ Export.image.toAsset({
 
 Export.image.toAsset({
   image: filtered,
-  description: 'filter_classif' + iteration + '_sherds_plot591_gt' + gt*100 + '_r'+ r1 + '-' + r2 + '_it' + it1 + '-' + it2,
+  description: 'filter_classif_' + iteration + '_sherds_plot591_gt' + gt*100 + '_r'+ r1 + '-' + r2 + '_it' + it1 + '-' + it2,
   scale: rr,
   maxPixels: 1e12,
   region: orthomosaic
@@ -164,5 +164,5 @@ Export.image.toAsset({
 
 Export.table.toAsset({
   collection: vectors,
-  description:'vectors_filter_classif' + iteration + '_sherds_plot591_gt' + gt*100 + '_r'+ r1 + '-' + r2 + '_it' + it1 + '-' + it2,
+  description:'vectors_filter_classif_' + iteration + '_sherds_plot591_gt' + gt*100 + '_r'+ r1 + '-' + r2 + '_it' + it1 + '-' + it2,
 });
